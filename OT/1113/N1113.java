@@ -23,7 +23,8 @@ public class N1113 {
 
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-
+        
+        // pool을 감싸는 높이 0짜리 빈공간 추가
         pool = new int[N + 2][M + 2];
 
         for (int i = 1; i <= N; i++) {
@@ -69,6 +70,7 @@ public class N1113 {
             }
         }
 
+        // 벽이 있는 곳은 물을 못채우므로 nonFill에 추가해준다.
         for (int i = 1; i < N+1; i++) {
             for (int j = 1; j < M+1; j++) {
                 if (pool[i][j] >= height) {
@@ -77,6 +79,7 @@ public class N1113 {
             }
         }
 
+        // 전체넓이 - 못채우는 곳의 넓이
         return (N + 2) * (M + 2) - nonFill;
     }
 }
