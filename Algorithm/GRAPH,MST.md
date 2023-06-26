@@ -19,7 +19,7 @@
     - 무방향 그래프 : n(n-1) / 2
     - 방향 그래프 : n(n-1)
 
-![Untitled](%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%84%91%E1%85%B3%20%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD%20bf52c7eca0594928b8f06e76b7c2fb34/Untitled.png)
+![Alt text](https://user-images.githubusercontent.com/84346055/248744859-c8d35ac1-bb9c-4760-93cb-a0130eb5d041.png)
 
 **부분 그래프**
 
@@ -84,7 +84,7 @@
 - 각 간선에 **가중치**가 적용되어 있다고 생각해보자
 - 최소 신장 트리란 **트리 엣지들의 가중치의 합이 최소가 되는 신장 트리**인 것이다.
 
-![Untitled](%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%84%91%E1%85%B3%20%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD%20bf52c7eca0594928b8f06e76b7c2fb34/Untitled%201.png)
+![Alt text](https://user-images.githubusercontent.com/84346055/248744991-5efd56df-a592-4fd2-ac28-97b4746fd519.png)
 
 **MST 판단 방법**
 
@@ -96,7 +96,7 @@
 - T 와 NT 구분하여 정점을 한 개씩 추가해가면서 T를 채워나간다.
     - T와 NT 사이의 간선 중 가중치가 최소인 간선을 선택해나간다.
 
-![Untitled](%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%84%91%E1%85%B3%20%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD%20bf52c7eca0594928b8f06e76b7c2fb34/Untitled%202.png)
+![Alt text](https://user-images.githubusercontent.com/84346055/248745070-41e62e8d-3968-405d-a1e2-bc540f3c1509.png)
 
 - 배열을 사용하는 방법 : O(V^2)
 - min heap을 사용하는 방법 (우선순위 큐) : O(ElogV)
@@ -195,11 +195,11 @@ void union(int x,int y){
 - 간선들을 가중치를 기준으로 오름차순 정렬
 - 사이클을 형성하지 않으면서 정렬된 순서의 간선들을 선택
 
-![Untitled](%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%84%91%E1%85%B3%20%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD%20bf52c7eca0594928b8f06e76b7c2fb34/Untitled%203.png)
+![Alt text](https://user-images.githubusercontent.com/84346055/248745134-f19737a8-b585-4432-93b5-33fae789e8d3.png)
 
 - **결과**
 
-  ![Untitled](%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%84%91%E1%85%B3%20%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD%20bf52c7eca0594928b8f06e76b7c2fb34/Untitled%204.png)
+![Alt text](https://user-images.githubusercontent.com/84346055/248745166-14201f95-3416-4335-afb8-eda6b00c1041.png)
 
 
 **사이클 판단**
@@ -207,7 +207,7 @@ void union(int x,int y){
 - 무방향 그래프에서의 사이클 판단은 **Union-Find** 사용
 - **어떻게 ?**
 
-  ![Untitled](%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%84%91%E1%85%B3%20%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD%20bf52c7eca0594928b8f06e76b7c2fb34/Untitled%205.png)
+  ![Alt text](https://user-images.githubusercontent.com/84346055/248745187-70b1e81d-01f3-4ff2-883f-9bc13a7fdd39.png)
 
   선택한 간선에 대해 두 정점의 최상위 노드가 동일할 경우 해당 간선에 대해 사이클이 발생하는 것을 알 수 있다.
 
