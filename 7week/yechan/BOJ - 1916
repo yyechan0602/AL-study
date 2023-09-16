@@ -1,0 +1,122 @@
+# BOJ - 1916
+
+[1916번: 최소비용 구하기](https://www.acmicpc.net/problem/1916)
+
+### 문제
+
+- 난이도 : Gold 5
+- 알고리즘 : 그래프 이론,  데이크스트라
+- 여러 개의 도시와 비용이 다른 여러 개의 버스가 있을 때, A도시에서 B도시로 가는데 드는 최소 비용을 출력하는 문제
+- 입력
+    - 첫째 줄: 도시의 개수 N(1 ≤ N ≤ 1,000)
+    - 둘째 줄: 버스의 개수 M(1 ≤ M ≤ 100,000)
+    - 셋째 줄부터 M+2개의 줄: 각 버스의 정보 ( 출발 `도시, 도착 도시, 비용)
+
+### 접근
+
+- **다익스트라**로 접근
+    - 특정 한 정점에서부터 모든 정점까지의 최단 경로를 구함
+    - 다익스트라의 개념을 응용 없이 적용 가능
+- dist를 INF로 초기화 시키고 진행하였다.
+
+ while (!pq.isEmpty()) {
+            if (visited[cur]) continue;
+            visited[cur] = true;
+
+            for ( cur위치의 모든 list 대상 ) {
+                if( 다음 위치가 방문을 안 했고, dist 값이 더 크면 )
+                    dist[node.end] = dist[cur] + node.weight;
+                    pq에 추가
+                }
+            }
+        }
+
+### 코드
+
+```java
+package BOJ.Dijkstra;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class N1916_2 {
+    private static class Node implements Comparable<Node> {
+        int end;
+        int weight;
+
+        public Node(int end, int weight) {
+            this.end = end;
+            this.weight = weight;
+        }
+
+        @Override
+        public int compareTo(Node node) {
+            if (this.weight < node.weight) return -1;
+            return 1;
+        }
+
+    }
+
+    static List<ArrayList<Node>> list;
+    static int N;
+    private final static int INF = Integer.MAX_VALUE;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        N = Integer.parseInt(br.readLine());
+        int M = Integer.parseInt(br.readLine());
+        list = new ArrayList<>();
+
+        for (int i = 0; i <= N; i++) {
+            list.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < M; i++) {
+            st = new StringTokenizer(br.readLine());
+            int start = Integer.parseInt(st.nextToken());
+            int end = Integer.parseInt(st.nextToken());
+            int weight = Integer.parseInt(st.nextToken());
+
+            list.get(start).add(new Node(end, weight));
+        }
+
+        st = new StringTokenizer(br.readLine());
+        int start = Integer.parseInt(st.nextToken());
+        int end = Integer.parseInt(st.nextToken());
+
+        System.out.println(Dijkstra(start, end));
+    }
+
+    private static int Dijkstra(int start, int end) {
+        PriorityQueue<Node> pq = new PriorityQueue<>();
+        boolean[] visited = new boolean[N + 1];
+        int[] dist = new int[N + 1];
+        Arrays.fill(dist, INF);
+        pq.add(new Node(start, 0));
+        dist[start] = 0;
+
+        while (!pq.isEmpty()) {
+            Node curNode = pq.poll();
+            int cur = curNode.end;
+
+            if (visited[cur]) continue;
+
+            visited[cur] = true;
+            for (Node node :
+                    list.get(cur)) {
+                if(!visited[node.end] && dist[node.end] > dist[cur] + node.weight){
+                    dist[node.end] = dist[cur] + node.weight;
+                    pq.add(new Node(node.end, dist[node.end]));
+                }
+            }
+        }
+
+        return dist[end];
+    }
+}
+```
+
+### 출력 결과
