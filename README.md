@@ -40,3 +40,8 @@
 | 11-12주차 | 문제 풀이 |
 | 13주차 | 비트마스킹 |
 | 14-15주차| 문제 풀이 |
+
+## 멤버 소개
+|진주원(팀장)|염예찬|소영|김상규|
+|:----:|:----:|:----:|:----:|
+|[@jinjoo-lab](https://github.com/jinjoo-lab)|[@yyechan0602](https://github.com/yyechan0602)|[@abbiddo](https://github.com/abbiddo)|[@ggyu0629](https://github.com/ggyu0629)|
