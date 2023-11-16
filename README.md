@@ -1,4 +1,5 @@
 ## 한국공학대학교 알고리즘 스터디 (TUK-Algorithm Study)
+![Logo](https://user-images.githubusercontent.com/84346055/283541708-ce80a932-6505-4c3d-9a22-1cb81677f657.jpg)
 
 ### 🎯 진행 방식
 
